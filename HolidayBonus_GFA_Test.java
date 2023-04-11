@@ -1,0 +1,34 @@
+import static org.junit.jupiter.api.Assertions.*; 
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+public class HolidayBonus_GFA_Test {
+
+	private double[][] dataSet1 = {{1,2,3},{4,5},{6,7,8}};
+
+	@BeforeEach
+	public void setUp() throws Exception {
+	}
+
+	@AfterEach
+	public void tearDown() throws Exception {
+	}
+	
+		
+	/**
+	 * Test calculateHolidayBonus method with a high of 5000, low of 1000 and 2000 as other		 
+	 */
+
+		@Test
+		public void testCalculateHolidayBonusA() {
+			try{
+			double[] result = HolidayBonus.calculateHolidayBonus(dataSet1,5000,1000,2000);
+			assertEquals(3000.0,result[0],.001);
+			}
+			catch (Exception e) {
+				fail("This should not have caused an Exception");
+			} 
+		}
+}
